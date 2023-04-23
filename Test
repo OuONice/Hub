@@ -1,0 +1,164 @@
+local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+
+local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+
+
+
+------------------------------  Anti AFK  ---------------------------------------------------------------
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1.5)
+    game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+
+
+
+----------------------------------  Topic name  ---------------------------------------------------------
+local Window = Library:CreateWindow({
+
+    Title = 'Script in Free time ',
+    Center = true, 
+    AutoShow = true,
+})
+local Tabs = {
+    Main = Window:AddTab('   Main   '), 
+    ['UI Settings'] = Window:AddTab('   UI Settings   '),
+}
+
+
+
+--------------------------------------  TP  and Tween  Player -----------------------------------------------------
+ 
+local LeftGroupBox = Tabs.Main:AddLeftGroupbox('TP Player')
+
+LeftGroupBox:AddDropdown('MyDropdown', {
+    Values = {},
+    Default = 1, 
+    Multi = false, 
+
+    Text = '',
+    Tooltip = '',
+})
+
+
+Options.MyDropdown:OnChanged(function(M)
+    
+    local dropdownValues = {}
+    for i, player in ipairs(game:GetService("Players"):GetPlayers()) do
+        table.insert(dropdownValues, player.Name)
+    end
+    Options.MyDropdown:SetValues(dropdownValues)
+    PlayerTP = M
+end)
+
+
+LeftGroupBox:AddToggle('MyToggle', {
+    Text = 'Tween Player',
+    Default = false, 
+    Tooltip = '', 
+})
+
+
+
+local function toggleChanged()
+    if Toggles.MyToggle.Value then
+        spawn(function()
+            while Toggles.MyToggle.Value do
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+                local player = game.Players:FindFirstChild(PlayerTP)
+                if player then
+                    local destination = player.Character.HumanoidRootPart.CFrame
+                    local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                    local speed = 250
+                    local time = distance / speed
+                    local TweenService = game:GetService("TweenService")
+                    local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+                        CFrame = destination,
+                    })
+                    Tw:Play()
+                    repeat wait(1) until Tw.Completed or not Toggles.MyToggle.Value
+                    Tw:Cancel()
+                end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+                wait() 
+            end
+        end)
+    end                     
+end
+          
+Toggles.MyToggle:OnChanged(toggleChanged)
+
+
+
+local MyButton = LeftGroupBox:AddButton('Refresh', function()
+    local dropdownValues = {}
+    for i, player in ipairs(game:GetService("Players"):GetPlayers()) do
+        table.insert(dropdownValues, player.Name)
+    end
+    Options.MyDropdown:SetValues(dropdownValues)
+end)
+
+
+local MyButton2 = MyButton:AddButton('Tp Player', function()
+    if PlayerTP then
+        local targetPlayer = game.Players[PlayerTP]
+        if targetPlayer and targetPlayer.Character then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+        end
+    end
+end)
+
+
+
+
+--------------------------------------  JOB ID  ------------------------------------------
+local RightGroupBox = Tabs.Main:AddRightGroupbox('          \\\\  JOB ID  //')
+
+RightGroupBox:AddInput('MyTextbox', {
+    Default = 'Job Id Here',
+    Numeric = false, 
+    Finished = false, 
+
+    Text = '',
+    Tooltip = '',
+
+    Placeholder = 'Job ID hare', 
+   
+})
+
+Options.MyTextbox:OnChanged(function()
+
+end)
+
+local TeleService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+
+local MyButton = RightGroupBox:AddButton('GET', function()
+           setclipboard(tostring(''..game.JobId..''))
+end)
+
+local MyButton2 = MyButton:AddButton('JOIN', function()
+      TeleService:TeleportToPlaceInstance(game.PlaceId,Options.MyTextbox.Value,Players.LocalPlayer)
+end)
+
+
+
+
+------------------------------------------  UI SETTING  -------------------------------------------------
+ThemeManager:SetLibrary(Library)
+SaveManager:SetLibrary(Library)
+SaveManager:IgnoreThemeSettings() 
+ThemeManager:SetFolder('My Hobby Script')
+SaveManager:SetFolder('My Hobby Script/GameSave')
+SaveManager:BuildConfigSection(Tabs['UI Settings']) 
+ThemeManager:ApplyToTab(Tabs['UI Settings'])
+
+
+
+
+
+
