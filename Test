@@ -32,7 +32,7 @@ local Tabs = {
 
 --------------------------------------  TP  and Tween  Player -----------------------------------------------------
  
-local LeftGroupBox = Tabs.Main:AddLeftGroupbox('TP Player')
+local LeftGroupBox = Tabs.Main:AddLeftGroupbox('            TP Player')
 
 LeftGroupBox:AddDropdown('MyDropdown', {
     Values = {},
@@ -67,7 +67,6 @@ local function toggleChanged()
     if Toggles.MyToggle.Value then
         spawn(function()
             while Toggles.MyToggle.Value do
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
                 local player = game.Players:FindFirstChild(PlayerTP)
                 if player then
                     local destination = player.Character.HumanoidRootPart.CFrame
@@ -82,7 +81,6 @@ local function toggleChanged()
                     repeat wait(1) until Tw.Completed or not Toggles.MyToggle.Value
                     Tw:Cancel()
                 end
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
                 wait() 
             end
         end)
@@ -112,6 +110,43 @@ local MyButton2 = MyButton:AddButton('Tp Player', function()
 end)
 
 
+-----------------------------------------  No Clip  ---------------------------------------------------------
+local LeftGroupBox = Tabs.Main:AddLeftGroupbox('              Mice')
+LeftGroupBox:AddToggle('NOCLIP', {
+    Text = 'No Clip',
+    Default = false, 
+    Tooltip = '', 
+})
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local function toggleChanged()
+    if Toggles.NOCLIP.Value == true then
+        spawn(function()
+          for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                  end
+             end)
+         end
+    end)
+else
+        if Toggles.NOCLIP.Value == false then
+              spawn(function()
+          for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = true
+                        end
+                    end)
+                end
+            end)
+        end
+    end
+end
+Toggles.NOCLIP:OnChanged(toggleChanged)
 
 
 --------------------------------------  JOB ID  ------------------------------------------
@@ -156,7 +191,6 @@ ThemeManager:SetFolder('My Hobby Script')
 SaveManager:SetFolder('My Hobby Script/GameSave')
 SaveManager:BuildConfigSection(Tabs['UI Settings']) 
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
-
 
 
 
