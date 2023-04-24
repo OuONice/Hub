@@ -148,7 +148,32 @@ else
 end
 Toggles.NOCLIP:OnChanged(toggleChanged)
 
+-------------------------------------  Click TP  -------------------------------------------------
+LeftGroupBox:AddToggle('CLICKTP', {
+    Text = 'Click TP',
+    Default = false, 
+    Tooltip = '', 
+})
 
+local function toggleChanged()
+    if Toggles.CLICKTP.Value then
+        spawn(function()
+            local Player = game:GetService("Players").LocalPlayer
+            local Mouse = Player:GetMouse()
+            local connection
+            connection = Mouse.Button1Down:connect(function()
+                if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+                if not Mouse.Target then return end
+                Player.Character:MoveTo(Mouse.Hit.p)
+            end)
+            while Toggles.CLICKTP.Value do
+                wait(0.1) -- เพิ่ม wait เพื่อป้องกันการเกิดอาการแลค
+            end
+            connection:disconnect()
+        end)
+    end
+end
+Toggles.CLICKTP:OnChanged(toggleChanged)
 --------------------------------------  JOB ID  ------------------------------------------
 local RightGroupBox = Tabs.Main:AddRightGroupbox('          \\\\  JOB ID  //')
 
