@@ -6,7 +6,7 @@ local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 
 
-------------------------------  Anti AFK  ---------------------------------------------------------------
+----------------------------------------  Anti AFK  ---------------------------------------------------------------
     game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     wait(1.5)
@@ -30,7 +30,7 @@ local Tabs = {
 
 
 
---------------------------------------  TP  and Tween  Player -----------------------------------------------------
+----------------------------------  TP  and Tween  Player  -----------------------------------------------------
  
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('            TP Player')
 
@@ -148,7 +148,7 @@ else
 end
 Toggles.NOCLIP:OnChanged(toggleChanged)
 
--------------------------------------  Click TP  -------------------------------------------------
+---------------------------------------  Click TP  -------------------------------------------------
 LeftGroupBox:AddToggle('CLICKTP', {
     Text = 'Click TP',
     Default = false, 
@@ -208,7 +208,7 @@ end)
 
 
 
-------------------------------------------  UI SETTING  -------------------------------------------------
+---------------------------------------  UI SETTING  -------------------------------------------------
 ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings() 
