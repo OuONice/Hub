@@ -1,3 +1,6 @@
+
+   
+
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
@@ -71,14 +74,16 @@ local function toggleChanged()
                 if player then
                     local destination = player.Character.HumanoidRootPart.CFrame
                     local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-                    local speed = 250
+                    local speed = 350
                     local time = distance / speed
                     local TweenService = game:GetService("TweenService")
                     local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
                         CFrame = destination,
                     })
                     Tw:Play()
-                    repeat wait(1) until Tw.Completed or not Toggles.MyToggle.Value
+                    repeat 
+                        wait(1) 
+                    until Tw.Completed or not Toggles.MyToggle.Value
                     Tw:Cancel()
                 end
                 wait() 
@@ -88,7 +93,6 @@ local function toggleChanged()
 end
           
 Toggles.MyToggle:OnChanged(toggleChanged)
-
 
 
 local MyButton = LeftGroupBox:AddButton('Refresh', function()
@@ -167,13 +171,17 @@ local function toggleChanged()
                 Player.Character:MoveTo(Mouse.Hit.p)
             end)
             while Toggles.CLICKTP.Value do
-                wait(0.1) -- เพิ่ม wait เพื่อป้องกันการเกิดอาการแลค
+                wait(0.1) 
             end
             connection:disconnect()
         end)
     end
 end
 Toggles.CLICKTP:OnChanged(toggleChanged)
+
+
+
+
 --------------------------------------  JOB ID  ------------------------------------------
 local RightGroupBox = Tabs.Main:AddRightGroupbox('          \\\\  JOB ID  //')
 
@@ -205,8 +213,216 @@ local MyButton2 = MyButton:AddButton('JOIN', function()
       TeleService:TeleportToPlaceInstance(game.PlaceId,Options.MyTextbox.Value,Players.LocalPlayer)
 end)
 
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local MyButton3 = RightGroupBox:AddButton('ReJoin game', function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+
+    if ErrorMessage and not Success then
+        warn(ErrorMessage)
+    end
+end)
 
 
+
+--------------------------------------  Save Teleport  -----------------------------------------------
+local RightGroupBox2 = Tabs.Main:AddRightGroupbox('      \\\\  Save Teleport  //')
+
+RightGroupBox2:AddInput('MyTextbox2', {
+    Default = 'Location 1',
+    Numeric = false, 
+    Finished = false, 
+
+    Text = '             Place 1',
+    Tooltip = '',
+    Placeholder = 'Location 1', 
+})
+
+Options.MyTextbox2:OnChanged(function()
+
+end)
+
+
+
+RightGroupBox2:AddToggle('TWEEN1', {
+    Text = 'Tween',
+    Default = false, 
+    Tooltip = '', 
+})
+local function toggleChanged()
+    if Toggles.TWEEN1.Value then
+        spawn(function()
+            while Toggles.TWEEN1.Value do
+                local coords = string.split(Options.MyTextbox2.Value, ',')
+                local x = tonumber(coords[1])
+                local y = tonumber(coords[2])
+                local z = tonumber(coords[3])
+                local destination = CFrame.new(x, y, z)
+                local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                local speed = 350 
+                local time = distance / speed
+
+                local TweenService = game:GetService("TweenService")
+                local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+                    CFrame = destination,
+                })
+                Tw:Play()
+                repeat wait() until not Toggles.TWEEN1.Value
+                Tw:Cancel()
+            end
+        end)
+    end
+end
+
+Toggles.TWEEN1:OnChanged(toggleChanged)
+
+
+local MyButton = RightGroupBox2:AddButton('GET PLACE', function()
+    local loc = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+    setclipboard(string.format("%s, %s, %s", loc.X, loc.Y, loc.Z))
+end)
+
+local MyButton2 = MyButton:AddButton('TP PLACE', function()
+    local coords = string.split(Options.MyTextbox2.Value, ',')
+    local x = tonumber(coords[1])
+    local y = tonumber(coords[2])
+    local z = tonumber(coords[3])
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x, y, z)
+end)
+
+----------------  save teleport ที่2
+local RightGroupBox3 = Tabs.Main:AddRightGroupbox('      \\\\  Save Teleport 2  //')
+
+RightGroupBox3:AddInput('MyTextbox3', {
+    Default = 'Location 2',
+    Numeric = false, 
+    Finished = false, 
+
+    Text = '             Place 2',
+    Tooltip = '',
+    Placeholder = 'Location 2', 
+})
+
+Options.MyTextbox3:OnChanged(function()
+
+end)
+
+
+
+RightGroupBox3:AddToggle('TWEEN2', {
+    Text = 'Tween',
+    Default = false, 
+    Tooltip = '', 
+})
+local function toggleChanged()
+    if Toggles.TWEEN2.Value then
+        spawn(function()
+            while Toggles.TWEEN2.Value do
+                local coords = string.split(Options.MyTextbox3.Value, ',')
+                local x = tonumber(coords[1])
+                local y = tonumber(coords[2])
+                local z = tonumber(coords[3])
+                local destination = CFrame.new(x, y, z)
+                local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                local speed = 350 
+                local time = distance / speed
+
+                local TweenService = game:GetService("TweenService")
+                local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+                    CFrame = destination,
+                })
+                Tw:Play()
+                repeat wait() until not Toggles.TWEEN2.Value
+                Tw:Cancel()
+            end
+        end)
+    end
+end
+
+Toggles.TWEEN2:OnChanged(toggleChanged)
+
+
+local MyButton22 = RightGroupBox3:AddButton('GET PLACE', function()
+    local loc = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+    setclipboard(string.format("%s, %s, %s", loc.X, loc.Y, loc.Z))
+end)
+
+local MyButton222 = MyButton22:AddButton('TP PLACE', function()
+    local coords = string.split(Options.MyTextbox3.Value, ',')
+    local x = tonumber(coords[1])
+    local y = tonumber(coords[2])
+    local z = tonumber(coords[3])
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x, y, z)
+end)
+
+----------------  save teleport ที3
+local RightGroupBox4 = Tabs.Main:AddRightGroupbox('      \\\\  Save Teleport 3  //')
+
+RightGroupBox4:AddInput('MyTextbox4', {
+    Default = 'Location 3',
+    Numeric = false, 
+    Finished = false, 
+
+    Text = '             Place 3',
+    Tooltip = '',
+    Placeholder = 'Location 3', 
+})
+
+Options.MyTextbox4:OnChanged(function()
+
+end)
+
+
+
+RightGroupBox4:AddToggle('TWEEN3', {
+    Text = 'Tween',
+    Default = false, 
+    Tooltip = '', 
+})
+local function toggleChanged()
+    if Toggles.TWEEN3.Value then
+        spawn(function()
+            while Toggles.TWEEN3.Value do
+                local coords = string.split(Options.MyTextbox4.Value, ',')
+                local x = tonumber(coords[1])
+                local y = tonumber(coords[2])
+                local z = tonumber(coords[3])
+                local destination = CFrame.new(x, y, z)
+                local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                local speed = 350 
+                local time = distance / speed
+
+                local TweenService = game:GetService("TweenService")
+                local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+                    CFrame = destination,
+                })
+                Tw:Play()
+                repeat wait() until not Toggles.TWEEN3.Value
+                Tw:Cancel()
+            end
+        end)
+    end
+end
+
+Toggles.TWEEN3:OnChanged(toggleChanged)
+
+
+local MyButton33 = RightGroupBox4:AddButton('GET PLACE', function()
+    local loc = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+    setclipboard(string.format("%s, %s, %s", loc.X, loc.Y, loc.Z))
+end)
+
+local MyButton333 = MyButton33:AddButton('TP PLACE', function()
+    local coords = string.split(Options.MyTextbox4.Value, ',')
+    local x = tonumber(coords[1])
+    local y = tonumber(coords[2])
+    local z = tonumber(coords[3])
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x, y, z)
+end)
 
 ---------------------------------------  UI SETTING  -------------------------------------------------
 ThemeManager:SetLibrary(Library)
@@ -216,7 +432,6 @@ ThemeManager:SetFolder('My Hobby Script')
 SaveManager:SetFolder('My Hobby Script/GameSave')
 SaveManager:BuildConfigSection(Tabs['UI Settings']) 
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
-
 
 
 
