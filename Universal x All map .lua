@@ -116,7 +116,11 @@ local MyButton2 = MyButton:AddButton('Tp Player', function()
 end)
 
 
------------------------------------------  No Clip  --------------------------------------------------------------------------------
+----------------------------------------  Player  ----------------------------------------------------------------------------------
+
+
+---No Clip
+
 
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('              Mice')
 LeftGroupBox:AddToggle('NOCLIP', {
@@ -155,7 +159,9 @@ else
 end
 Toggles.NOCLIP:OnChanged(toggleChanged)
 
-----------------------------------------  Click TP  ---------------------------------------------------------------------------------
+
+---Click TP
+
 
 LeftGroupBox:AddToggle('CLICKTP', {
     Text = 'Click TP',
@@ -184,9 +190,8 @@ end
 Toggles.CLICKTP:OnChanged(toggleChanged)
 
 
-----------------------------------------  Player  ----------------------------------------------------------------------------------
-
 ---walk Speed
+
 
 LeftGroupBox:AddSlider('MySlider', {
     Text = 'Walk Speed',
@@ -205,7 +210,9 @@ Options.MySlider:OnChanged(function()
       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed  =  Options.MySlider.Value
 end)
 
+
 ---Jump Power
+
 
 LeftGroupBox:AddSlider('JUMP', {
     Text = 'JumpPower',
@@ -476,7 +483,6 @@ ThemeManager:SetFolder('My Hobby Script')
 SaveManager:SetFolder('My Hobby Script/GameSave')
 SaveManager:BuildConfigSection(Tabs['UI Settings']) 
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
-
 
 
 
