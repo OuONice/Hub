@@ -1,4 +1,13 @@
 # Project-Universal
+
+# Function-Universal
+-added TP Player
+-added Tween Player
+-added Save Teleprot
+-added Join Job Id
+
+
+
 # Bug List
 
 -แก้ตายแล้ว No Clip หายต้องรันใหม่
