@@ -9,7 +9,8 @@ local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 
 
-----------------------------------------  Anti AFK  ---------------------------------------------------------------
+----------------------------------------  Anti AFK  -------------------------------------------------------------------------------
+
     game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     wait(1.5)
@@ -19,7 +20,8 @@ end)
 
 
 
----------------------------------------  Topic name  ---------------------------------------------------------
+---------------------------------------  Topic name  -------------------------------------------------------------------------------
+
 local Window = Library:CreateWindow({
 
     Title = 'Script in Free time ',
@@ -33,7 +35,7 @@ local Tabs = {
 
 
 
-----------------------------------  TP  and Tween  Player  -----------------------------------------------------
+----------------------------------  TP  and Tween  Player  -------------------------------------------------------------------------
  
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('            TP Player')
 
@@ -114,7 +116,8 @@ local MyButton2 = MyButton:AddButton('Tp Player', function()
 end)
 
 
------------------------------------------  No Clip  ---------------------------------------------------------
+-----------------------------------------  No Clip  --------------------------------------------------------------------------------
+
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('              Mice')
 LeftGroupBox:AddToggle('NOCLIP', {
     Text = 'No Clip',
@@ -152,7 +155,8 @@ else
 end
 Toggles.NOCLIP:OnChanged(toggleChanged)
 
----------------------------------------  Click TP  -------------------------------------------------
+----------------------------------------  Click TP  ---------------------------------------------------------------------------------
+
 LeftGroupBox:AddToggle('CLICKTP', {
     Text = 'Click TP',
     Default = false, 
@@ -180,7 +184,7 @@ end
 Toggles.CLICKTP:OnChanged(toggleChanged)
 
 
-------------------------------------  Player  -----------------------------------------------------------------------------------
+----------------------------------------  Player  ----------------------------------------------------------------------------------
 
 ---walk Speed
 
@@ -202,6 +206,7 @@ Options.MySlider:OnChanged(function()
 end)
 
 ---Jump Power
+
 LeftGroupBox:AddSlider('JUMP', {
     Text = 'JumpPower',
     Default = 45,
@@ -218,7 +223,8 @@ Options.JUMP:OnChanged(function()
         game.Players.LocalPlayer.Character.Humanoid.JumpPower  =  Options.JUMP.Value
 end)
 
---------------------------------------  JOB ID  ------------------------------------------
+----------------------------------------  JOB ID  ------------------------------------------
+
 local RightGroupBox = Tabs.Main:AddRightGroupbox('          \\\\  JOB ID  //')
 
 RightGroupBox:AddInput('MyTextbox', {
@@ -265,7 +271,8 @@ end)
 
 
 
---------------------------------------  Save Teleport  -----------------------------------------------
+--------------------------------------  Save Teleport  ----------------------------------------------------------------------------
+
 local RightGroupBox2 = Tabs.Main:AddRightGroupbox('      \\\\  Save Teleport  //')
 
 RightGroupBox2:AddInput('MyTextbox2', {
@@ -460,7 +467,8 @@ local MyButton333 = MyButton33:AddButton('TP PLACE', function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x, y, z)
 end)
 
----------------------------------------  UI SETTING  -------------------------------------------------
+---------------------------------------  UI SETTING  ------------------------------------------------------------------------------
+
 ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings() 
