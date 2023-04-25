@@ -3,7 +3,7 @@
 
 # Function-Universal
 
--added TP Playerㅤㅤㅤㅤㅤㅤㅤ-added TP Player
+-added TP Playerㅤㅤㅤ
 
 -added Tween Player
 
@@ -14,6 +14,8 @@
 -added Rejoin Button
 
 -added Click TP
+
+-added No clip
 
 
 # Bug List
