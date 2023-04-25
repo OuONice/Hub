@@ -3,16 +3,17 @@
 
 # Function-Universal
 
--added TP Player
+-added TP Playerㅤㅤㅤㅤㅤㅤㅤ-added TP Player
 
 -added Tween Player
 
--added Save Teleprot
+-added Save Teleport
 
 -added Join Job Id
 
 -added Rejoin Button
 
+-added Click TP
 
 
 # Bug List
