@@ -180,7 +180,43 @@ end
 Toggles.CLICKTP:OnChanged(toggleChanged)
 
 
+------------------------------------  Player  -----------------------------------------------------------------------------------
 
+---walk Speed
+
+LeftGroupBox:AddSlider('MySlider', {
+    Text = 'Walk Speed',
+    Default = 16,
+    Min = 16,
+    Max = 250,
+    Rounding = 0,
+    Compact = true,
+     
+})
+
+
+local Number = Options.MySlider.Value  
+
+Options.MySlider:OnChanged(function()
+      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed  =  Options.MySlider.Value
+end)
+
+---Jump Power
+LeftGroupBox:AddSlider('JUMP', {
+    Text = 'JumpPower',
+    Default = 45,
+    Min = 45,
+    Max = 250,
+    Rounding = 0,
+    Compact = true,
+    
+})
+
+
+local Number = Options.JUMP.Value  
+Options.JUMP:OnChanged(function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower  =  Options.JUMP.Value
+end)
 
 --------------------------------------  JOB ID  ------------------------------------------
 local RightGroupBox = Tabs.Main:AddRightGroupbox('          \\\\  JOB ID  //')
