@@ -11,6 +11,8 @@
 
 -added Join Job Id
 
+-added Rejoin Button
+
 
 
 # Bug List
