@@ -17,6 +17,9 @@
 
 -added No clip
 
+-added Walk Speed
+
+-added Jump Power
 
 # Bug List
 
