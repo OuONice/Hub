@@ -1,0 +1,1034 @@
+local placeId = game.PlaceId
+if placeId == 2753915549 then
+    BF1 = true
+elseif placeId == 4442272183 then
+    BF2 = true
+elseif placeId == 7449423635 then
+    BF3 = true
+elseif placeId == 2629642516 then
+    BC = true
+end
+
+spawn(function()
+    while wait() do 
+    end
+end)
+------------------------------------------------------------   BLOX FRUIT WORLD 1   ---------------------------------------------------------------
+if BF1 then
+    
+---------------------------------------------  Anti AFK  ---------------------------------------------------------------
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1.5)
+    game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+    
+local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+
+local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+
+
+-----------------------------------------------  Name  -----------------------------------------------  
+local Window = Library:CreateWindow({
+    
+    Title = 'Wizard X',
+    Center = true, 
+    AutoShow = true,
+      
+})
+
+      
+-------------------------------------------   Topic Name --------------------------------------------  
+local Tabs = {
+    Teleport = Window:AddTab('  Teleport  '), 
+      ESP = Window:AddTab('   ESP   '),
+      PVP = Window:AddTab('   PVP   '),
+      ['UI Settings'] = Window:AddTab('UI Settings'),
+      ['Another Game'] = Window:AddTab('Another Game'),
+
+}
+ -------------------------------------------   World  ---------------------------------------------------------------  
+local LeftGroupBox = Tabs.Teleport:AddLeftGroupbox('         \\\\   World   //')
+
+
+local Button1 = LeftGroupBox:AddButton('Sea 1', function()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+end)
+
+local Button2 = LeftGroupBox:AddButton('Sea 2', function()
+     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+
+end)
+
+local Button2 = LeftGroupBox:AddButton('Sea 3', function()
+     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+
+end)
+
+local LeftGroupBox = Tabs.Teleport:AddLeftGroupbox('          [  TP Place  ]')
+-------------------------------------------  Pirate Island  -------------------------------------------------------
+
+local MyButton = LeftGroupBox:AddButton('Pirate Island', function()
+local destination = CFrame.new(929.6537475585938, 16.51660919189453, 1426.915771484375)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+------------------------------------------  Marin Island  ----------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Marin Island', function()
+local destination = CFrame.new(-2585.873291015625, 6.888818264007568, 2046.9337158203125)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Monkey  Island  -------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Monkey  Island', function()
+local destination = CFrame.new(-1439.6290283203125, 61.85195541381836, -13.073500633239746)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+--------------------------------------------  Middle Town  ---------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Middle Town', function()
+local destination = CFrame.new(-648.39404296875, 7.8522210121154785, 1573.846923828125)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Bagy  Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Bagy Island', function()
+local destination = CFrame.new(-1139.4576416015625, 4.752049922943115, 3817.113525390625)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Desert  Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Desert Island', function()
+local destination = CFrame.new(930.609375, 6.601679801940918, 4181.74853515625)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Frozen  Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Frozen Island', function()
+local destination = CFrame.new(1126.6864013671875, 7.303403377532959, -1183.1500244140625)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Marin Force  Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Marin Force Island', function()
+local destination = CFrame.new(-4965.333984375, 20.65203285217285, 4258.12255859375)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Sky 1 Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton(' Sky 1 Island ', function()
+local destination = CFrame.new(-4871.11767578125, 717.7953491210938, -2623.725341796875)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Sky 2 Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton(' Sky 2 Island ', function()
+local destination = CFrame.new(-7881.03076171875, 5545.70703125, -372.7045593261719)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Prison Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton(' Prison Island ', function()
+local destination = CFrame.new(4853.46240234375, 5.77748441696167, 735.0455932617188)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Manga Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton(' Manga Island ', function()
+local destination = CFrame.new(-5365.16357421875, 9.116003036499023, 8494.833984375)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Fishman Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton(' Fishman Island ', function()
+local destination = CFrame.new(4004.682373046875, 0.3261767029762268, -1827.821044921875)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+-------------------------------------------  Water Seven Island  --------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('  Water Seven Island ', function()
+local destination = CFrame.new(5049.2158203125, 1.6266041994094849, 4053.704833984375)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+
+
+
+
+
+
+
+
+
+--------------------------------------  JOBID -------------------------------------------------------------------------
+local RightGroupBox = Tabs.Teleport:AddRightGroupbox('          \\\\  JOB ID  //')
+
+RightGroupBox:AddInput('MyTextbox', {
+    Default = 'Job Id Here',
+    Numeric = false, 
+    Finished = false, 
+
+    Text = '',
+    Tooltip = '',
+
+    Placeholder = 'Placeholder text', 
+   
+})
+
+Options.MyTextbox:OnChanged(function()
+
+end)
+
+local TeleService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+
+local MyButton = RightGroupBox:AddButton('GET JOB ID', function()
+           setclipboard(tostring(''..game.JobId..''))
+end)
+
+local MyButton2 = MyButton:AddButton('JOIN JOB ID', function()
+      TeleService:TeleportToPlaceInstance(game.PlaceId,Options.MyTextbox.Value,Players.LocalPlayer)
+end)
+
+--------------------------------------  SECREAT  ACCESS -------------------------------------------------------------------------
+local RightGroupBox2 = Tabs.Teleport:AddRightGroupbox('     \\\\   SECREAT  ACCESS  //')
+local MyButton = RightGroupBox2:AddButton('SECREAT ROOM', function()
+       game.Players.LocalPlayer:Kick("เอากุญแจมาเดี๊ยวเปิดให้")
+end)
+
+
+--------------------------------------  UI SETTING  ------------------------------------------------------
+ThemeManager:SetLibrary(Library)
+SaveManager:SetLibrary(Library)
+SaveManager:IgnoreThemeSettings() 
+SaveManager:SetIgnoreIndexes({ 'MenuKeybind' }) 
+ThemeManager:SetFolder('OuO Hub')
+SaveManager:SetFolder('OuO Hub/specific-game')
+SaveManager:BuildConfigSection(Tabs['UI Settings']) 
+ThemeManager:ApplyToTab(Tabs['UI Settings'])
+
+
+-----------------------------------  Another Game  ------------------------------------------------------
+local AnotherGroup = Tabs['Another Game']:AddLeftGroupbox('Game')
+local TeleService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+local MyButton = AnotherGroup:AddButton('Blox Fruits', function()
+    TeleService:Teleport(2753915549,Players.LocalPlayer)
+end)
+
+local MyButton = AnotherGroup:AddButton('[Update🔥] Bitcoin Miner ⛏️ Beta', function()
+    TeleService:Teleport(2629642516,Players.LocalPlayer)
+end)
+
+
+----------------------------------  Key  Blind  -------------------------------------------------------------------------
+game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.RightControl then
+        if Window.Visible then
+            Window:Hide()
+        end
+    end
+end)
+-----------------------------------------  ESP Topic  --------------------------------------------------------------------------
+local ESP = Tabs['ESP']:AddLeftGroupbox('ESP')
+ESP:AddToggle('ESP_Player_Button', {
+    Text = 'ESP Player',
+    Default = false,
+    Tooltip = 'Nill',
+})
+
+local function toggleChanged()
+    if Toggles.ESP_Player_Button.Value then
+        spawn(function()
+            while Toggles.ESP_Player_Button.Value do
+                for i, v in pairs(game.Players:GetChildren()) do
+                    if not v.Character.Head:FindFirstChild("ESP") then
+                        local BillboardGui = Instance.new("BillboardGui")
+                        local TextLabel = Instance.new("TextLabel")
+                        BillboardGui.Parent = v.Character.Head
+                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                        BillboardGui.Active = true
+                        BillboardGui.Name = "ESP"
+                        BillboardGui.AlwaysOnTop = true
+                        BillboardGui.LightInfluence = 1.000
+                        BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                        BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                        TextLabel.Parent = BillboardGui
+                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.BackgroundTransparency = 1.000
+                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                        TextLabel.Font = Enum.Font.SourceSansBold
+                        TextLabel.Text = v.Name
+                        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.TextScaled = true
+                        TextLabel.TextSize = 14.000
+                        TextLabel.TextStrokeTransparency = 0.000
+                        TextLabel.TextWrapped = true
+                    end
+                end
+                wait(0.5)
+            end
+        end)
+    else
+        for i, v in pairs(game.Players:GetChildren()) do
+            local ESPBillboardGui = v.Character.Head:FindFirstChild("ESP")
+            if ESPBillboardGui then
+                ESPBillboardGui:Destroy()
+            end
+        end
+    end
+end
+
+Toggles.ESP_Player_Button:OnChanged(toggleChanged)
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+ESP:AddToggle('ESP All Chest', {
+    Text = 'ESP Chest',
+    Default = false, 
+    Tooltip = 'Nill', 
+})
+ESP:AddToggle('ESP All Fruit', {
+    Text = 'ESP Fruit',
+    Default = false, 
+    Tooltip = 'Nill', 
+})
+----------------------------------------  PVP Topic  ---------------------------------------------------------------------------
+local PVP = Tabs['PVP']:AddLeftGroupbox('PVP Setting')
+PVP:AddButton('KillAll', function() 
+    
+end)
+
+------------------------------------------------------------   BLOX FRUIT WORLD 2   ---------------------------------------------------------------
+elseif BF2 then
+----------------------------------------------------  Anti AFK  ---------------------------------------------------------------
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1.5)
+    game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+    
+local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+
+local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+
+
+-----------------------------------------------  Name  -----------------------------------------------  
+local Window = Library:CreateWindow({
+    
+    Title = 'Wizard X',
+    Center = true, 
+    AutoShow = true,
+      
+})
+
+      
+-------------------------------------------   Topic Name --------------------------------------------  
+local Tabs = {
+    Teleport = Window:AddTab('  Teleport  '), 
+      ESP = Window:AddTab('   ESP   '),
+      PVP = Window:AddTab('   PVP   '),
+      ['UI Settings'] = Window:AddTab('UI Settings'),
+      ['Another Game'] = Window:AddTab('Another Game'),
+
+
+}
+ -------------------------------------------   World  ---------------------------------------------------------------  
+local LeftGroupBox = Tabs.Teleport:AddLeftGroupbox('         \\\\   World   //')
+
+
+local Button1 = LeftGroupBox:AddButton('Sea 1', function()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+end)
+
+local Button2 = LeftGroupBox:AddButton('Sea 2', function()
+     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+
+end)
+
+local Button2 = LeftGroupBox:AddButton('Sea 3', function()
+     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+
+end)
+
+local LeftGroupBox = Tabs.Teleport:AddLeftGroupbox('          [  TP Place  ]')
+
+
+
+
+
+
+-------------------------------------------  First Place Island  -------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('First Place', function()
+local destination = CFrame.new(-10.782224655151367, 19.402055740356445, 2828.543212890625)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+   CFrame = destination,
+})
+Tw:Play()
+end)
+------------------------------------  Cafe  -------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Cafe', function()
+local destination = CFrame.new(-383.581787109375, 73.14540100097656, 292.84051513671875)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+------------------------------------  Green Zone  -------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('Green Zone', function()
+local destination = CFrame.new(-2263.934326171875, 73.09144592285156, -2801.025146484375)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+------------------------------------  colossiam  -------------------------------------------------------
+local MyButton = LeftGroupBox:AddButton('colossiam', function()
+local destination = CFrame.new(-1837.58935546875, 45.92002868652344, 1368.9014892578125)
+local distance = (destination.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+local speed = 300
+local time = distance / speed
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {
+    CFrame = destination,
+})
+Tw:Play()
+end)
+
+
+
+
+
+
+
+--------------------------------------  JOBID -------------------------------------------------------------------------
+local RightGroupBox = Tabs.Teleport:AddRightGroupbox('          \\\\  JOB ID  //')
+
+RightGroupBox:AddInput('MyTextbox', {
+    Default = 'Job Id Here',
+    Numeric = false, 
+    Finished = false, 
+
+    Text = '',
+    Tooltip = '',
+
+    Placeholder = 'Placeholder text', 
+   
+})
+
+Options.MyTextbox:OnChanged(function()
+
+end)
+
+local TeleService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+
+local MyButton = RightGroupBox:AddButton('GET JOB ID', function()
+           setclipboard(tostring(''..game.JobId..''))
+end)
+
+local MyButton2 = MyButton:AddButton('JOIN JOB ID', function()
+      TeleService:TeleportToPlaceInstance(game.PlaceId,Options.MyTextbox.Value,Players.LocalPlayer)
+end)
+
+
+    
+--------------------------------------  SECREAT  ACCESS -------------------------------------------------------------------------
+local RightGroupBox2 = Tabs.Teleport:AddRightGroupbox('     \\\\   SECREAT  ACCESS  //')
+local MyButton = RightGroupBox2:AddButton('SECREAT ROOM', function()
+       game.Players.LocalPlayer:Kick("เอากุญแจมาเดี๊ยวเปิดให้")
+end)
+
+
+--------------------------------------  UI SETTING  ------------------------------------------------------
+ThemeManager:SetLibrary(Library)
+SaveManager:SetLibrary(Library)
+SaveManager:IgnoreThemeSettings() 
+SaveManager:SetIgnoreIndexes({ 'MenuKeybind' }) 
+ThemeManager:SetFolder('OuO Hub')
+SaveManager:SetFolder('OuO Hub/specific-game')
+SaveManager:BuildConfigSection(Tabs['UI Settings']) 
+ThemeManager:ApplyToTab(Tabs['UI Settings'])
+
+
+-----------------------------------  Another Game  ------------------------------------------------------
+local AnotherGroup = Tabs['Another Game']:AddLeftGroupbox('Game')
+local TeleService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+local MyButton = AnotherGroup:AddButton('Blox Fruits', function()
+    TeleService:Teleport(2753915549,Players.LocalPlayer)
+end)
+
+local MyButton = AnotherGroup:AddButton('[Update🔥] Bitcoin Miner ⛏️ Beta', function()
+    TeleService:Teleport(2629642516,Players.LocalPlayer)
+end)
+
+----------------------------------  Key  Blind  -------------------------------------------------------------------------
+game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.RightControl then
+        if Window.Visible then
+            Window:Hide()
+        end
+    end
+end)
+-----------------------------------------  ESP Topic  --------------------------------------------------------------------------
+local ESP = Tabs['ESP']:AddLeftGroupbox('ESP')
+ESP:AddToggle('ESP_Player_Button', {
+    Text = 'ESP Player',
+    Default = false,
+    Tooltip = 'Nill',
+})
+
+local function toggleChanged()
+    if Toggles.ESP_Player_Button.Value then
+        spawn(function()
+            while Toggles.ESP_Player_Button.Value do
+                for i, v in pairs(game.Players:GetChildren()) do
+                    if not v.Character.Head:FindFirstChild("ESP") then
+                        local BillboardGui = Instance.new("BillboardGui")
+                        local TextLabel = Instance.new("TextLabel")
+                        BillboardGui.Parent = v.Character.Head
+                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                        BillboardGui.Active = true
+                        BillboardGui.Name = "ESP"
+                        BillboardGui.AlwaysOnTop = true
+                        BillboardGui.LightInfluence = 1.000
+                        BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                        BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                        TextLabel.Parent = BillboardGui
+                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.BackgroundTransparency = 1.000
+                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                        TextLabel.Font = Enum.Font.SourceSansBold
+                        TextLabel.Text = v.Name
+                        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.TextScaled = true
+                        TextLabel.TextSize = 14.000
+                        TextLabel.TextStrokeTransparency = 0.000
+                        TextLabel.TextWrapped = true
+                    end
+                end
+                wait(0.5)
+            end
+        end)
+    else
+        for i, v in pairs(game.Players:GetChildren()) do
+            local ESPBillboardGui = v.Character.Head:FindFirstChild("ESP")
+            if ESPBillboardGui then
+                ESPBillboardGui:Destroy()
+            end
+        end
+    end
+end
+
+Toggles.ESP_Player_Button:OnChanged(toggleChanged)
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+ESP:AddToggle('ESP All Chest', {
+    Text = 'ESP Chest',
+    Default = false, 
+    Tooltip = 'Nill', 
+})
+ESP:AddToggle('ESP All Fruit', {
+    Text = 'ESP Fruit',
+    Default = false, 
+    Tooltip = 'Nill', 
+})
+----------------------------------------  PVP Topic  ---------------------------------------------------------------------------
+local PVP = Tabs['PVP']:AddLeftGroupbox('PVP Setting')
+PVP:AddButton('KillAll', function() 
+    
+end)
+
+elseif BF3 then
+        game.Players.LocalPlayer:Kick("  ยังไม่เสร็จไอ้เหี้ย")
+
+
+
+
+---------------------------------------------------------------------  Bit Coin Map  ------------------------------------------------
+elseif BC then
+
+------------------------------  Anti AFK  ---------------------------------------------------------------
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1.5)
+    game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+    
+local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+
+local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+
+
+-----------------------------------------------  Name  -----------------------------------------------  
+local Window = Library:CreateWindow({
+    
+    Title = 'Wizard X',
+    Center = true, 
+    AutoShow = true,
+      
+})
+
+      
+-------------------------------------------   Topic Name --------------------------------------------  
+local Tabs = {
+    Teleport = Window:AddTab('  Teleport  '), 
+    Player = Window:AddTab('  Player  '), 
+    ['UI Settings'] = Window:AddTab('UI Settings'),
+    ['Another Game'] = Window:AddTab('Another Game'),
+
+}
+
+-------------------------------------------  City  -------------------------------------------------
+local LeftGroupBox3 = Tabs.Teleport:AddLeftGroupbox('         \\\\  City    //')
+
+local Button1 = LeftGroupBox3:AddButton('City 1', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36.86770248413086, 6.7167840003967285, 94.4119644165039)
+end)
+
+local Button1 = LeftGroupBox3:AddButton('City 2', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-148.3450927734375, 26.839296340942383, 13873.0283203125)
+end)
+ -------------------------------------------   Plot  ---------------------------------------------------------------  
+local LeftGroupBox = Tabs.Teleport:AddLeftGroupbox('         \\\\   Plot   //')
+
+
+local Button1 = LeftGroupBox:AddButton('My Place 1', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(95.00526428222656, 7.339326858520508, -19.545387268066406)
+
+end)
+
+local Button2 = LeftGroupBox:AddButton('My Place 2', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(95.26483917236328, 7.339324474334717, 89.97936248779297)
+
+end)
+
+local Button3 = LeftGroupBox:AddButton('My Place 3', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(96.17402648925781, 7.339326858520508, 200.43014526367188)
+
+end)
+
+local Button4 = LeftGroupBox:AddButton('My Place 4', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9.632197380065918, 7.339324474334717, -18.414527893066406)
+
+end)
+
+local Button5 = LeftGroupBox:AddButton('My Place 5', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14.466692924499512, 7.339324474334717, 92.40541076660156)
+
+end)
+
+local Button6 = LeftGroupBox:AddButton('My Place 6', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16.994882583618164, 7.339324474334717, 201.1040496826172)
+
+end)
+
+local LeftGroupBox = Tabs.Teleport:AddLeftGroupbox('         \\\\  Buy Zone  //')
+
+
+-------------------------------------------  Buy Zone  -------------------------------------------------------
+
+local MyButton = LeftGroupBox:AddButton('Shop', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(213.4146728515625, 6.3969950675964355, 90.58887481689453)
+end)
+
+local MyButton = LeftGroupBox:AddButton('Shop Lv.25', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(38.363609313964844, 6.716878890991211, -698.7756958007812)
+end)
+
+local MyButton = LeftGroupBox:AddButton('Miner Tool ', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-49.10060501098633, 6.716825008392334, -898.0913696289062)
+end)
+
+local MyButton = LeftGroupBox:AddButton('Tables and more ', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(111.38817596435547, 6.838013172149658, -902.8607788085938)
+end)
+
+local MyButton = LeftGroupBox:AddButton('HSV Lv.60 ', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(38.22315979003906, 6.716786861419678, -1088.80712890625)
+end)
+
+local MyButton = LeftGroupBox:AddButton('Chypset ', function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-252.5582733154297, 6.716879367828369, -1148.602294921875)
+end)
+
+
+
+
+--------------------------------------  Sell -------------------------------------------------------------------------
+local RightGroupBox = Tabs.Teleport:AddRightGroupbox('          \\\\  Sell  //')
+   
+local MyButton = RightGroupBox:AddButton('Sell Bit Coin', function()
+      local args = {
+    [1] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ExchangeMoney"):FireServer(unpack(args))
+
+end)
+
+local MyButton = RightGroupBox:AddButton('Sell Solaris', function()
+     local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ExchangeMoney"):FireServer(unpack(args))
+
+
+end)
+-------------------------------------  Auto  -------------------------------------------------------------------------
+local RightGroupBox4 = Tabs.Teleport:AddRightGroupbox('       \\\\  Auto Anything  //')
+RightGroupBox4:AddToggle('Claim', {
+    Text = 'Auto Claim Star',
+    Default = false,
+    Tooltip = '',
+})
+local function toggleChanged()
+    if Toggles.Claim.Value then
+        spawn(function()
+            while Toggles.Claim.Value do
+            game:GetService("ReplicatedStorage").Events.ClaimFreeBoostStar:FireServer()
+                wait(1) -- เพิ่ม wait เพื่อป้องกันการเกิดอาการแลค
+            end
+        end)
+    end
+end
+Toggles.Claim:OnChanged(toggleChanged)
+---------------------------------------------  Auto  Claim Bitcoin  -------------------------------------------
+
+RightGroupBox4:AddToggle('BitCoin', {
+       Text = 'Auto Sell BittCoin',
+       Default = false,
+       Tooltip = '',
+})
+local function toggleChanged()
+    if Toggles.BitCoin.Value then
+         spawn(function()
+           local args = {
+    [1] = true
+}
+          while Toggles.BitCoin.Value do
+          game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ExchangeMoney"):FireServer(unpack(args))
+              wait(1)
+            end
+        end)
+    end
+end
+Toggles.BitCoin:OnChanged(toggleChanged)
+
+-------------------------------------------  Auto  Solaris  -------------------------------------------------------------------------
+RightGroupBox4:AddToggle('Solaris', {
+       Text = 'Auto Sell Solaris',
+       Default = false,
+       Tooltip = '',
+})
+local function toggleChanged()
+    if Toggles.Solaris.Value then
+         spawn(function()
+          local args = {
+    [1] = false
+}
+          while Toggles.Solaris.Value do
+              game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ExchangeMoney"):FireServer(unpack(args))
+              wait(1)
+            end
+        end)
+    end
+end
+Toggles.Solaris:OnChanged(toggleChanged)
+---------------------------------------------  Auto  Claim Box  -------------------------------------------
+
+RightGroupBox4:AddToggle('Box', {
+       Text = 'Auto Get Box',
+       Default = false,
+       Tooltip = '',
+})
+local function toggleChanged()
+    if Toggles.Box.Value then
+        spawn(function()
+            while Toggles.Box.Value do
+            game:GetService("ReplicatedStorage").Events.ClmFrCrt:FireServer(false)
+            game:GetService("ReplicatedStorage").Events.ClmFrCrt:FireServer(true)
+                wait(1) -- เพิ่ม wait เพื่อป้องกันการเกิดอาการแลค
+            end
+        end)
+    end
+end
+Toggles.Box:OnChanged(toggleChanged)
+---------------------------------------------  Auto Auto OverClock  -------------------------------------------
+
+RightGroupBox4:AddToggle('OverClock', {
+       Text = 'Auto OverClock',
+       Default = false,
+       Tooltip = '',
+})
+local function toggleChanged()
+    if Toggles.OverClock.Value then
+        spawn(function()
+            while Toggles.OverClock.Value do
+             game:GetService("ReplicatedStorage").Events.ActivateOverclock:FireServer()
+                wait(1) 
+            end
+        end)
+    end
+end
+Toggles.OverClock:OnChanged(toggleChanged)
+
+--------------------------------------  hahahahahahahahaha  -------------------------------------------------------------------------
+RightGroupBox4:AddToggle('HAHA', {
+       Text = 'Kaitan Bitcoin Miner ⛏️(BETA)',
+       Default = false,
+       Tooltip = '',
+})
+local function toggleChanged()
+    if Toggles.HAHA.Value then
+         spawn(function()
+          local args = {
+    [1] = false
+}
+          while Toggles.HAHA.Value do
+            game.Players.LocalPlayer:Kick("you have been banned for:cheating suspicion")
+              wait(1)
+            end
+        end)
+    end
+end
+Toggles.HAHA:OnChanged(toggleChanged)
+
+
+
+--------------------------------------  JOBID -------------------------------------------------------------------------
+local RightGroupBox = Tabs.Teleport:AddRightGroupbox('          \\\\  JOB ID  //')
+
+RightGroupBox:AddInput('MyTextbox', {
+    Default = 'Job Id Here',
+    Numeric = false, 
+    Finished = false, 
+
+    Text = '',
+    Tooltip = '',
+
+    Placeholder = 'Placeholder text', 
+   
+})
+
+Options.MyTextbox:OnChanged(function()
+
+end)
+
+local TeleService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+
+local MyButton = RightGroupBox:AddButton('GET JOB ID', function()
+           setclipboard(tostring(''..game.JobId..''))
+end)
+
+local MyButton2 = MyButton:AddButton('JOIN JOB ID', function()
+      TeleService:TeleportToPlaceInstance(game.PlaceId,Options.MyTextbox.Value,Players.LocalPlayer)
+end)
+
+
+
+
+--------------------------------------  SECREAT  ACCESS -------------------------------------------------------------------------
+local RightGroupBox2 = Tabs.Teleport:AddRightGroupbox('     \\\\   SECREAT  ACCESS  //')
+local MyButton = RightGroupBox2:AddButton('SECREAT ROOM', function()
+       game.Players.LocalPlayer:Kick("เอากุญแจมาเดี๊ยวเปิดให้")
+end)
+
+
+
+
+
+-------------------------------------  Player  -----------------------------------------------------------------------------------
+
+---walk Speed
+
+local PlayerGroup = Tabs['Player']:AddLeftGroupbox('Ability')
+
+PlayerGroup:AddSlider('MySlider', {
+    Text = 'Walk Speed',
+    Default = 16,
+    Min = 16,
+    Max = 250,
+    Rounding = 0,
+    Compact = true,
+     
+})
+
+
+local Number = Options.MySlider.Value  
+
+Options.MySlider:OnChanged(function()
+      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed  =  Options.MySlider.Value
+end)
+
+---Jump Power
+PlayerGroup:AddSlider('JUMP', {
+    Text = 'JumpPower',
+    Default = 45,
+    Min = 45,
+    Max = 250,
+    Rounding = 0,
+    Compact = true,
+    
+})
+
+
+local Number = Options.JUMP.Value  
+Options.JUMP:OnChanged(function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower  =  Options.JUMP.Value
+end)
+
+--------------------------------------  UI SETTING  ------------------------------------------------------
+
+ThemeManager:SetLibrary(Library)
+SaveManager:SetLibrary(Library)
+SaveManager:IgnoreThemeSettings() 
+SaveManager:SetIgnoreIndexes({ 'MenuKeybind' }) 
+ThemeManager:SetFolder('OuO Hub')
+SaveManager:SetFolder('OuO Hub/specific-game')
+SaveManager:BuildConfigSection(Tabs['UI Settings']) 
+ThemeManager:ApplyToTab(Tabs['UI Settings'])
+
+
+-----------------------------------  Another Game  ------------------------------------------------------
+local AnotherGroup = Tabs['Another Game']:AddLeftGroupbox('Game')
+local TeleService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+local MyButton = AnotherGroup:AddButton('Blox Fruits', function()
+    TeleService:Teleport(2753915549,Players.LocalPlayer)
+end)
+
+local MyButton = AnotherGroup:AddButton('[Update🔥] Bitcoin Miner ⛏️ Beta', function()
+    TeleService:Teleport(2629642516,Players.LocalPlayer)
+end)
+
+
+----------------------------------  Key  Blind  -------------------------------------------------------------------------
+game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.RightControl then
+        if Window.Visible then
+            Window:Hide()
+        end
+    end
+end)
+
+
+------------------------------------------------  Kick Sentence  --------------------------------------------
+else
+    game.Players.LocalPlayer:Kick("บอกให้ไอ้เตอร์ อัพแมพนี้ด้วย")
+end
